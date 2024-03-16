@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<the49:BottomSheet xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Contacts.Pages.UpdateContact"
+             xmlns:the49="https://schemas.the49.com/dotnet/2023/maui"
+             Padding="5,5"
+             BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}">
+    <StackLayout HeightRequest="490" x:Name="principalStack">
+
+
+
+        <HorizontalStackLayout VerticalOptions="Start" HorizontalOptions="Center">
+            
+
+            <Label Text="Update Contact"
+           VerticalOptions="Center"
+           FontAttributes="Bold"
+           FontSize="25"
+           TextColor="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}"
+           Margin="0,5,0,5"/>
+
+        </HorizontalStackLayout>
+
+        <BoxView
+         BackgroundColor="Gray"
+         HeightRequest="0.5"/>
+
+
+
+        <VerticalStackLayout Margin="0,30,0,0">
+
+            <!--name entry-->
+            <HorizontalStackLayout >
+                <Label x:Name="personIcon" FontFamily="fa-solid-900" VerticalOptions="Center" FontSize="20" Margin="20,0,0,0"/>
+                <VerticalStackLayout Margin="20,0,0,0">
+                    <Entry x:Name="contactName" Placeholder="Name"  WidthRequest="280" />
+                    <Label x:Name="nameRequired" Text="This field is required." TextColor="Red" IsVisible="false"/>
+                </VerticalStackLayout>
+
+            </HorizontalStackLayout>
+
+            <!--occupation entry-->
+            <HorizontalStackLayout Margin="0,35,0,0" x:Name="occupationStack">
+                <Label x:Name="jobIcon" FontFamily="fa-solid-900" VerticalOptions="Center" FontSize="20" Margin="20,0,0,0"/>
+                <VerticalStackLayout Margin="20,0,0,0">
+                    <Entry x:Name="contactOccupation" Placeholder="Occupation"  WidthRequest="280" />
+                    <!--<Label Text="This field is required." TextColor="Red"/>-->
+                </VerticalStackLayout>
+
+            </HorizontalStackLayout>
+
+            <!--phone number entry-->
+            <HorizontalStackLayout  Margin="0,10,0,0">
+                <Label x:Name="phoneIcon" FontFamily="fa-solid-900" VerticalOptions="Center" FontSize="20" Margin="20,0,0,0"/>
+                <VerticalStackLayout Margin="20,0,0,0">
+                    <Entry x:Name="contactPhone" Placeholder="PhoneNumber"  WidthRequest="280" Keyboard="Telephone"/>
+                    <Label x:Name="phoneRequired" Text="This field is required." TextColor="Red" IsVisible="false"/>
+                </VerticalStackLayout>
+
+            </HorizontalStackLayout>
+
+            <!--address entry-->
+            <HorizontalStackLayout Margin="0,30,0,0" x:Name="addressStack">
+                <Label x:Name="cityIcon" FontFamily="fa-solid-900" VerticalOptions="Center" FontSize="20" Margin="20,0,0,0"/>
+                <VerticalStackLayout Margin="20,0,0,0">
+                    <Entry x:Name="contactAddress" Placeholder="Address"  WidthRequest="280" />
+                    <!--<Label Text="This field is required." TextColor="Red"/>-->
+                </VerticalStackLayout>
+
+            </HorizontalStackLayout>
+
+            <!--Email entry-->
+            <HorizontalStackLayout Margin="0,25,0,0" x:Name="emailStack">
+                <Label x:Name="mailIcon" FontFamily="fa-solid-900" VerticalOptions="Center" FontSize="20" Margin="20,0,0,0"/>
+                <VerticalStackLayout Margin="20,0,0,0">
+                    <Entry x:Name="contactEmail" Placeholder="sample@gmail.com"  WidthRequest="280" Keyboard="Email"/>
+                    <Label x:Name="checkEmail" Text="Check Email" TextColor="Red" IsVisible="false"/>
+                </VerticalStackLayout>
+
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout VerticalOptions="Start" HorizontalOptions="Center">
+
+                <Button Text="Cancel"
+                TextColor="#53A652"
+                FontAttributes="Bold"
+                FontSize="20"
+                BackgroundColor="Transparent"
+                Clicked="CancelBotton_Clicked"
+                Margin="0,0,20,0"
+                x:Name="Cancelbtn"/>
+
+                <BoxView WidthRequest="2" />
+
+                <Button Text="Update"
+                TextColor="#BE4A39"
+                BackgroundColor="Transparent"
+                FontSize="20"
+                FontAttributes="Bold"
+                Clicked="UpdateButton_Clicked"
+                Margin="20,0,0,0"
+                HorizontalOptions="End"
+                 x:Name="Updatebtn"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+
+    </StackLayout>
+</the49:BottomSheet>
